@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />         
+    <title>About Us - DavTantra</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,123,255,0.8), rgba(0,86,179,0.8)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600"><rect fill="%23e3f2fd" width="1000" height="600"/><circle fill="%23007bff" opacity="0.1" cx="200" cy="200" r="100"/><circle fill="%23005b96" opacity="0.1" cx="800" cy="400" r="150"/></svg>');
+            background-size: cover;
+            color: white;
+            text-align: center;
+             padding: 250px 0;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease-out;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background: white;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #007bff;
+        }
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .about-text {
+            font-size: 1.1rem;
+        }
+        .about-image {
+            text-align: center;
+        }
+        .about-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* Story and Mission Sections */
+        .story, .mission {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        .story-content, .mission-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .story-content h2, .mission-content h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #0056b3;
+        }
+        .story-content p, .mission-content p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Team Section */
+        .team {
+            padding: 80px 0;
+            background: white;
+        }
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .team-member {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+        .team-member img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            object-fit: cover;
+        }
+        .team-member h3 {
+            color: #007bff;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #343a40;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        .footer-links {
+            margin-bottom: 1rem;
+        }
+        .footer-links a {
+            color: #adb5bd;
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: color 0.3s;
+        }
+        .footer-links a:hover {
+            color: white;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+     <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">DavTantra</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="services.html" class="nav-link">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+            </ul>
+           <div class="nav-search">
+  <input type="text" placeholder="Search..." class="search-input">
+  <i class="fa-solid fa-magnifying-glass search-icon"></i>
+</div>
+
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+           <h1>About <span>DavTantra</span></h1>
+           <p>
+      At <strong>DavTantra</strong>, we empower individuals and businesses through innovative IT solutions and real-world learning opportunities. 
+      With a passion for technology and creativity, we deliver modern web, software, and AI-powered applications that help you stay ahead in the digital era.
+    </p>
+    <p>
+      We also provide <b>internships and live project experiences</b> that transform students into skilled professionals ready to lead in today’s tech-driven world.
+    </p>
+        
+        
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">Who We Are</h2>
+            <div class="about-content">
+                <div class="about-text">
+                     <p>
+        <strong>DavTantra</strong> is a passionate team of developers and tech enthusiasts dedicated to creating quality web and software solutions. 
+      </p>
+      <p>
+        We also guide students and beginners through hands-on experience with <b>Java mini projects</b> and practical web development projects to help them learn, build, and grow.
+      </p>
+      <p>
+        Our mission is simple: <b>teach, develop, and deliver</b> real-world solutions that strengthen skills and empower businesses.
+      </p>
+                </div>
+                <div class="about-image">
+                    <!-- Placeholder image; replace with actual image URL -->
+                    <img src="team.jpg" alt="itBoys Teaam">
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="story">
+        <div class="container">
+            <div class="story-content">
+                <h2>Our Story</h2>
+                <p>
+      Founded in 2025, <strong>DavTantra</strong> began as a small team of passionate developers with a vision to make learning and building technology accessible to everyone.
+    </p>
+    <p>
+      From creating practical <b>Java  projects</b> to developing modern <b>web applications</b> and software solutions, we have helped students and businesses turn ideas into reality.
+    </p>
+    <p>
+      Today, we continue to grow, delivering quality web and software solutions while nurturing the next generation of developers through hands-on experience and guided projects.
+    </p>
+            
+            </div>
+        </div>
+    </section>
+
+    <section class="mission">
+        <div class="container">
+            <div class="mission-content">
+                <h2>Our Mission & Vision</h2>
+                <p><strong>Mission:</strong> To empower businesses with robust IT solutions that enhance efficiency, security, and growth in an ever-connected world.</p>
+                <p><strong>Vision:</strong> To be the go-to partner for innovative IT services, pioneering the future of technology one solution at a time.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- <section class="team">
+        <div class="container">
+            <h2 class="section-title">Meet Our Team</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="https://via.placeholder.com/120/007bff/ffffff?text=JD" alt="D_Abhishek">
+                    <h3>Abhishek D</h3>
+                    <p>CEO & Founder</p>
+                </div> -->
+                <!-- <div class="team-member">
+                    <img src="https://via.placeholder.com/120/0056b3/ffffff?text=JS" alt="Jane Smith">
+                    <h3>Jane Smith</h3>
+                    <p>CTO</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://via.placeholder.com/120/007bff/ffffff?text=MB" alt="Mike Brown">
+                    <h3>Mike Brown</h3>
+                    <p>Lead Developer</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://via.placeholder.com/120/0056b3/ffffff?text=AS" alt="Anna Silva">
+                    <h3>Anna Silva</h3>
+                    <p>Project Manager</p>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+     <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="about.html">About Us</a>
+            </div>
+            <p>&copy; 2025 DavTantra... All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar Hamburger Menu Toggle 
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            hamburger.classList.remove('active');
+        }));
+        // Simple Animation on Scroll (using Intersection Observer for performance)
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe sections for fade-in effect
+        document.querySelectorAll('.about, .story, .mission, .team').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+
+document.querySelector('.search-icon').addEventListener('click', function() {
+      const input = document.querySelector('.search-input');
+      const query = input.value.trim();
+
+      if (query) {
+          // 🔹 Option 1: Google Search
+          // const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+
+          // 🔹 Option 2: DuckDuckGo (Open Source / Privacy Friendly)
+          const searchUrl = `https://duckduckgo.com/?q=${encodeURIComponent(query)}`;
+
+          // 🔹 Open search in new tab
+          window.open(searchUrl, '_blank');
+      } else {
+          alert('Please enter something to search!');
+      }
+  });
+
+  // Optional: Press Enter key to search
+  document.querySelector('.search-input').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+          document.querySelector('.search-icon').click();
+      }
+  });
+
+    </script>
+    <script src="index.js"></script>
+</body>
+</html>

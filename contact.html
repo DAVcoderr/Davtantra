@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Contact Us - DavTantra</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <style>
+       
+
+      
+
+        
+
+        /* Header */
+        header {
+            background: linear-gradient(rgba(0,86,179,0.9));
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .contact-info {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .contact-info h2 {
+            font-size: 1.8rem;
+            color: #667eea;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            color: #667eea;
+            margin-right: 1rem;
+            width: 30px;
+            text-align: center;
+        }
+
+        .contact-item div {
+            flex: 1;
+        }
+
+        .contact-item a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-item a:hover {
+            color: #667eea;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .contact-form h2 {
+            font-size: 1.8rem;
+            color: #667eea;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #555;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+           background: linear-gradient(rgba(0,86,179,0.9));
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+           
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .nav-search {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .search-input {
+                width: 150px;
+            }
+
+            .contact-section {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            .contact-info,
+            .contact-form {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .contact-item {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .contact-item i {
+                margin-right: 0;
+                margin-bottom: 0.5rem;
+            }
+
+            .search-input {
+                width: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">DavTantra</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="services.html" class="nav-link">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+            </ul>
+           <div class="nav-search">
+  <input type="text" placeholder="Search..." class="search-input">
+  <i class="fa-solid fa-magnifying-glass search-icon"></i>
+</div>
+
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <h1>DavTantra</h1>
+        <p>Internship Provider</p>
+    </header>
+
+    <div class="container">
+        <section class="contact-section">
+            <div class="contact-info">
+                <h2>Get in Touch</h2>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <strong>Address</strong><br>
+                        Pune
+                    </div>
+                </div>
+                <!-- <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <strong>Phone</strong><br>
+                        <a href="tel:+1234567890">+1 (234) 567-890</a>
+                    </div>
+                </div> -->
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <strong>Email</strong><br>
+                        <a href="DavTantra@gmail.com">davtantra@gmail.com</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <strong>Hours</strong><br>
+                        Mon - Fri: 9AM - 5PM<br>
+                        Sat - Sun: Closed
+                    </div>
+                </div>
+            </div>
+
+            <form class="contact-form" id="contactForm">
+    <h2>Send a Message</h2>
+
+    <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" required>
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required>
+    </div>
+
+    <div class="form-group">
+        <label for="subject">Mobile No</label>
+        <input type="text" id="subject" name="subject" required>
+    </div>
+
+    <div class="form-group">
+        <label for="message">Course Name</label>
+        <textarea id="message" name="message" required></textarea>
+    </div>
+
+    <button type="submit" class="submit-btn">Send Message</button>
+</form>
+        </section>
+    </div>
+
+    <footer>
+
+        <div class="container">
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="about.html">About Us</a>
+            </div>
+            <p>&copy; 2025 DavTantra. All rights reserved. | Designed with ❤️ for innovative IT solutions.</p>
+        </div>
+       
+    </footer>
+
+    <script type="text/javascript">
+        // Navbar Hamburger Menu Toggle 
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            hamburger.classList.remove('active');
+        }));
+
+        // Simple form submission handler (for demo; replace with actual backend integration)
+        // document.getElementById('contactForm').addEventListener('submit', function(e) {
+        //     e.preventDefault();
+        //     alert('Thank you for your message! We\'ll get back to you soon. (This is a demo - integrate with a backend for real submissions.)');
+        //     this.reset();
+        // });
+
+        // Search icon click (basic functionality)
+        // document.querySelector('.search-icon').addEventListener('click', function() {
+        //     const input = document.querySelector('.search-input');
+        //     if (input.value) {
+        //         // Simulate search (replace with actual search logic)
+        //         alert('Searching for: ' + input.value);
+        //     }
+        // });
+         document.querySelector('.search-icon').addEventListener('click', function() {
+      const input = document.querySelector('.search-input');
+      const query = input.value.trim();
+
+      if (query) {
+          // 🔹 Option 1: Google Search
+          // const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+
+          // 🔹 Option 2: DuckDuckGo (Open Source / Privacy Friendly)
+          const searchUrl = `https://duckduckgo.com/?q=${encodeURIComponent(query)}`;
+
+          // 🔹 Open search in new tab
+          window.open(searchUrl, '_blank');
+      } else {
+          alert('Please enter something to search!');
+      }
+  });
+
+  // Optional: Press Enter key to search
+  document.querySelector('.search-input').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+          document.querySelector('.search-icon').click();
+      }
+  });
+       
+        <!-- EmailJS Script -->
+
+
+
+  // ✅ Step 1: Initialize EmailJS (only once)
+  (function() {
+      emailjs.init("gKHSAzHQAQ5gDAphk");  // ✅ Your Public Key
+  })();
+
+  // ✅ Step 2: Handle form submit
+  document.getElementById("contactForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      // Collect form values
+      const formData = {
+          name: document.getElementById("name").value,
+          email: document.getElementById("email").value,
+          subject: document.getElementById("subject").value,
+          message: document.getElementById("message").value
+      };
+
+      // Disable button while sending
+      const btn = this.querySelector("button[type='submit']");
+      btn.disabled = true;
+      btn.textContent = "Sending...";
+
+      // ✅ Step 3: Send Email using your Service & Template ID
+       emailjs.send("service_m3l75tr","template_tscvo88", formData)
+      .then(function(response) {
+          alert("✅ Message sent successfully! We’ll get back to you soon.");
+          console.log("EmailJS Response:", response);
+          document.getElementById("contactForm").reset();
+      })
+      .catch(function(error) {
+          alert("❌ Failed to send message. Please try again later.");
+          console.error("EmailJS Error:", error);
+      })
+      .finally(function() {
+          btn.disabled = false;
+          btn.textContent = "Send Message";
+      });
+  });
+
+
+
+
+
+       
+
+    </script>
+</body>
+</html>

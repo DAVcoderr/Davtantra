@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />         
+    <title>Services - DavTantra</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,123,255,0.9), rgba(0,86,179,0.9)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600"><rect fill="%23e3f2fd" width="1000" height="600"/><circle fill="%23007bff" opacity="0.2" cx="200" cy="200" r="100"/><circle fill="%23005b96" opacity="0.2" cx="800" cy="400" r="150"/><line stroke="%23007bff" stroke-width="2" opacity="0.3" x1="0" y1="300" x2="1000" y2="300"/></svg>');
+            background-size: cover;
+            color: white;
+            text-align: center;
+             padding: 220px 0;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease-out;
+        }
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+        .cta-button {
+            display: inline-block;
+            background: #ffd700;
+            color: #333;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background: white;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #007bff;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .service-card {
+            background: #f8f9fa;
+            padding: 2.5rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-left: 5px solid #007bff;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+        .service-card i {
+            font-size: 3.5rem;
+            color: #007bff;
+            margin-bottom: 1rem;
+        }
+        .service-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #0056b3;
+        }
+        .service-card p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+        .service-features {
+            list-style: none;
+            text-align: left;
+            margin-top: 1rem;
+        }
+        .service-features li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .service-features li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
+        }
+
+
+        /* .nav-search {
+  display: flex;
+  align-items: center;
+  background: #f2f2f2;
+  border-radius: 30px;
+  padding: 5px 15px;
+  width: 250px;
+  transition: all 0.3s ease;
+}
+
+.nav-search:focus-within {
+  background: #fff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+}
+
+.search-input {
+  border: none;
+  background: transparent;
+  outline: none;
+  flex: 1;
+  padding: 8px;
+  font-size: 14px;
+}
+
+.search-icon {
+  color: #007bff;
+  cursor: pointer;
+  font-size: 18px;
+} */
+
+        /* Why Choose Us Section */
+        .why-choose {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        .why-choose-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .why-choose-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #007bff;
+        }
+        .why-choose-text p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+        .why-choose-image {
+            text-align: center;
+        }
+        .why-choose-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* Contact CTA */
+        .contact-cta {
+            padding: 80px 0;
+            background: white;
+            text-align: center;
+        }
+        .contact-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #0056b3;
+        }
+        .contact-cta p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #343a40;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        .footer-links {
+            margin-bottom: 1rem;
+        }
+        .footer-links a {
+            color: #adb5bd;
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: color 0.3s;
+        }
+        .footer-links a:hover {
+            color: white;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .hero p {
+                font-size: 1.1rem;
+            }
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            .why-choose-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+     <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">DavTantra</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="services.html" class="nav-link">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+            </ul>
+           <div class="nav-search">
+  <input type="text" placeholder="Search..." class="search-input">
+  <i class="fa-solid fa-magnifying-glass search-icon"></i>
+</div>
+
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+    <section class="hero">
+        <div class="container">
+            <h1>Our Services</h1>
+            <p>
+            Discover how <strong>DavTantra</strong> can help you grow with practical IT solutions. 
+            From modern <b>web development</b> to robust <b>software applications</b> and hands-on <b>Java mini projects</b>, 
+            we deliver tailored services to meet your unique needs and drive success.
+           </p> 
+            
+            <a href="#contact" class="cta-button">Request a Quote</a>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">What We Offer</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i>🎨</i>
+                    <h3>Web  Development</h3>
+                    <p>Create stunning, responsive websites that engage users and convert visitors, powered by modern frameworks and SEO best practices.</p>
+                    <ul class="service-features">
+                        <li>Html Css javascript Bootstrap</li>
+                        <li>E-commerce solutions</li>
+                        <li>Ongoing maintenance</li>
+                        <li>Free</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <i>🎨</i>
+                    <h3>React Basic</h3>
+                    <p>Create stunning, responsive websites that engage users and convert visitors, powered by modern frameworks and SEO best practices.</p>
+                    <ul class="service-features">
+                        <li>Basic React</li>
+                        <li>React solutions</li>
+                        <li>Ongoing maintenance</li>
+                        <li>Free</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <i>💻</i>
+                    <h3>Software Development</h3>
+                    <p>Build bespoke applications with agile methodologies, ensuring high-quality code, user-friendly interfaces, and integration with existing systems.</p>
+                    <ul class="service-features">
+                        <li>Web and mobile app development</li>
+                        <li>API integration and automation</li>
+                        <li>Testing and deployment</li>
+                    </ul>
+                </div>
+                <!-- <div class="service-card">
+                    <i>☁️</i> Java And DSA To BUild a Logic -->
+                    <!-- <h3>Cloud Computing</h3>
+                     <p>
+                      Build bespoke applications with agile methodologies, ensuring high-quality code, user-friendly interfaces, and integration with existing systems.
+                       </p>
+                    <ul class="service-features">
+                        <li>Cloud migration and setup</li>
+                        <li>Hybrid cloud solutions</li>
+                        <li>24/7 monitoring and support</li>
+                    </ul>
+                </div> -->
+                
+                <div class="service-card">
+                    <i>🔒</i>
+                    <h3>DSA</h3>
+                    <p>Protect your assets with advanced threat detection, compliance management, and proactive security measures to safeguard against evolving cyber risks.</p>
+                    <ul class="service-features">
+                        <li>Vulnerability assessments</li>
+                        <li>Firewall and encryption implementation</li>
+                        <li>Incident response planning</li>
+                    <li>Free</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <i>⚡</i>
+                    <h3>Java Developement</h3>
+                    <p>Revolutionize your operations through IoT, AI, blockchain, and data analytics to enhance efficiency and unlock new opportunities.</p>
+                    <ul class="service-features">
+                        <li>Process automation</li>
+                        <li>AI-driven insights</li>
+                        
+                        <li>Blockchain for secure transactions</li>
+                    <li>Free</li>
+                    </ul>
+                </div>
+               
+
+                <div class="service-card">
+                    <i>🛠️</i>
+                    <h3>IT Consulting</h3>
+                    <p>Expert guidance to align your IT strategy with business goals, including audits, roadmaps, and vendor management for optimal results.</p>
+                    <ul class="service-features">
+                        <li>Technology assessments</li>
+                        <li>Strategic planning</li>
+                        <li>Cost optimization advice</li>
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <section class="why-choose">
+        <div class="container">
+            <div class="why-choose-content">
+                <div class="why-choose-text">
+                    <h2>Why Choose <span>DavTantra</span> for Your IT Needs ?</h2>
+                    <p>
+      With years of experience, <strong>DavTantra</strong> delivers high-quality, reliable, and innovative IT solutions that grow with your business. 
+      We specialize in <b>Web development</b>, <b>software applications</b>, and <b>Java mini projects</b> to provide practical, real-world solutions.
+    </p>
+    <p>
+      Our client-focused approach ensures every project aligns with your timeline, budget, and goals. No project is too small or complex — we adapt to your needs and deliver results that matter.
+    </p>
+                
+                </div>
+                <div class="why-choose-image">
+                    <!-- Placeholder image; replace with actual image URL -->
+                    <img src="boys.jpg" alt="itBoys Services">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-cta">
+        <div class="container">
+            <h2>Let's Discuss Your Project</h2>
+            <p>Ready to get started? Contact our team for a personalized consultation and see how our services can transform your business.</p>
+            
+            <a href="contact.html" class="cta-button">Get in Touch</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="about.html">About Us</a>
+            </div>
+            <p>&copy; 2025 DavTantra... All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar Hamburger Menu Toggle 
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            hamburger.classList.remove('active');
+        }));
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Simple Animation on Scroll (using Intersection Observer for performance)
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe sections for fade-in effect
+        document.querySelectorAll('.services, .why-choose, .contact-cta').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+         document.querySelector('.search-icon').addEventListener('click', function() {
+      const input = document.querySelector('.search-input');
+      const query = input.value.trim();
+
+      if (query) {
+          // 🔹 Option 1: Google Search
+          // const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+
+          // 🔹 Option 2: DuckDuckGo (Open Source / Privacy Friendly)
+          const searchUrl = `https://duckduckgo.com/?q=${encodeURIComponent(query)}`;
+
+          // 🔹 Open search in new tab
+          window.open(searchUrl, '_blank');
+      } else {
+          alert('Please enter something to search!');
+      }
+  });
+
+  // Optional: Press Enter key to search
+  document.querySelector('.search-input').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+          document.querySelector('.search-icon').click();
+      }
+  });
+
+
+    </script>
+    <script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />         
+    
+    <title>DavTantra</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">DavTantra</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="services.html" class="nav-link">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="nav-search">
+  <input type="text" placeholder="Search..." class="search-input">
+  <i class="fa-solid fa-magnifying-glass search-icon"></i>
+</div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+     <section class="hero">
+        <div class="container">
+            <h1>Welcome to DavTantra</h1>
+            <p>Your trusted partner in IT services. Innovate. Build. Succeed. Join our internship programs and turn your skills into real impact. </p>
+            <a href="services.html" class="cta-button">Get Started Today</a>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i>🎓</i> <!-- Emoji for cloud; replace with Font Awesome if needed -->
+                    <h3>Internship & Training</h3>
+                    <p>Gain real-world experience through guided internships and build projects that prepare you for the IT industry.</p>
+                    <!-- <p>Scalable cloud solutions with AWS, Azure, and Google Cloud to optimize your infrastructure and reduce costs.</p> -->
+                </div>
+                <div class="service-card">
+                    <i>💻</i>
+                    <h3>Software Development</h3>
+                    <p>Custom web and mobile apps built with modern technologies like React, Node.js, and AI integration.</p>
+                </div>
+                <div class="service-card">
+                    <i>🌐</i> <!-- Emoji for cloud; replace with Font Awesome if needed -->
+                    <h3>Web Developement</h3>
+                    <p>Professional and responsive websites built with HTML, CSS, JavaScript, React, and modern frameworks — optimized for performance and user experience.</p>
+                    <!-- <p>Scalable cloud solutions with AWS, Azure, and Google Cloud to optimize your infrastructure and reduce costs.</p> -->
+                </div>
+                <!-- <div class="service-card">
+                    <i>🔒</i>
+                    <h3>Cybersecurity</h3>
+                    <p>Comprehensive protection against threats, including firewalls, encryption, and compliance audits to secure your data.</p>
+                </div> -->
+                <!-- <div class="service-card">
+                    <i>💻</i>
+                    <h3>Software Development</h3>
+                    <p>Custom web and mobile apps built with modern technologies like React, Node.js, and AI integration.</p>
+                </div> -->
+                <!-- <div class="service-card">
+                    <i>⚡</i>
+                    <h3>Digital Transformation</h3>
+                    <p>Streamline your operations with IoT, blockchain, and automation to future-proof your business.</p>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="stats">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Our Achievements</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>5+</h3>
+                    <p>Learner</p>
+                </div>
+                <div class="stat-item">
+                    <h3>5+</h3>
+                    <p>Projects Completed</p>
+                </div>
+                <div class="stat-item">
+                    <h3>5</h3>
+                    <p>Happy Clients</p>
+                </div>
+                <div class="stat-item">
+                    <h3>99.9%</h3>
+                    <p>Uptime Guarantee</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <section class="about-snippet">
+        <div class="container">
+            <div class="about-snippet-content">
+                <h2><i>🚀</i> Why Choose DavTantra ?</h2>
+                
+              <p>We combine creativity and technology to deliver unique, AI-powered and scalable solutions for your business.</p>
+    </div> <a href="about.html" class="cta-button">Learn More About Us</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-cta">
+        <div class="container">
+            <h2>Ready to Transform You !</h2>
+           <p>Learn. Build. Innovate.</p>
+            <p>Build live projects, gain real experience, and kickstart your IT career with DavTantra.</p>
+            <a href="contact.html" class="cta-button">Contact Us Now</a>
+        </div>
+    </section>
+
+    
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="about.html">About Us</a>
+            </div>
+            <p>&copy; 2025 DavTantra... All rights reserved.</p>
+        </div>
+    </footer>
+<script>
+document.querySelector('.search-icon').addEventListener('click', function() {
+      const input = document.querySelector('.search-input');
+      const query = input.value.trim();
+
+      if (query) {
+          // 🔹 Option 1: Google Search
+          // const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+
+          // 🔹 Option 2: DuckDuckGo (Open Source / Privacy Friendly)
+          const searchUrl = `https://duckduckgo.com/?q=${encodeURIComponent(query)}`;
+
+          // 🔹 Open search in new tab
+          window.open(searchUrl, '_blank');
+      } else {
+          alert('Please enter something to search!');
+      }
+  });
+
+  // Optional: Press Enter key to search
+  document.querySelector('.search-input').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+          document.querySelector('.search-icon').click();
+      }
+  });</script>
+
+   <script src="index.js"></script>
+
+</body>
+</html>
